@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="pmApp">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Welcome to Bootstrap</title>
-		<link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<title>Welcome to SPA</title>
+		<link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+		<script src="/components/angular/angular.js"></script>
+		<script src="/components/angular-route/angular-route.min.js"></script>
+		<script src="app.module.js"></script>
+		<script src="app.config.js"></script>
+		<script src="project-detail/project-detail.module.js"></script>
+		<script src="project-detail/project-detail.component.js"></script>
+		
 	</head>
 	<body>
 		<div class="container">
-			<h1>Hello, world!</h1>
-			<div class="col-md-4">
-				<h2>Sample 1</h2>
-				<p class="text-danger">
-					Sample 2
-				</p>
+			<h1 class="text-center">Single Page Application</h1>
+			<div class="col-md-3">
+				<h2>Menu</h2>
+				<p><a href="#!/index">Home</a></p>
+				<a href="#!/projects/1">Projects</a>
 			</div>
-			<div class="col-md-4">
-				<h2>Sample 2</h2>
-				<p class="text-danger">
-					Sample 2
-				</p>
+			<div class="col-md-9">
+				<h2>Contents</h2>
+				<div ng-view></div>
 			</div>
 		</div>
 	</body>

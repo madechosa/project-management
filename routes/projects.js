@@ -2,13 +2,6 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
-	host: '10.164.37.53',
-	database:'training',
-	user: 'training',
-	password:'training'
-});
-
 function Project(id, name) {
 	this.id = id;
 	this.name = name;
@@ -19,8 +12,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
-	var sql = 'SELECT id, name FROM test WHERE id = ' + req.params.id;
-	
+	var sql = 'SELECT id, name FROM project WHERE id = ' + req.params.id;
+
+	var connection = mysql.createConnection({
+		host: 'localhost',
+		database:'training',
+		user: 'training',
+		password:'training'
+	});
+
 	connection.connect();
 	
 	connection.query(sql, function(err, rows, fields) {
