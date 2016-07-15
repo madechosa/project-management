@@ -9,8 +9,17 @@ angular.
       $locationProvider.hashPrefix('!');
 
       $routeProvider.
-        when('/projects/:projectId', {
-          template: '<project-detail></project-detail>'
+        when('/projects/summary', {
+http://localhost:3000/#          template: '<project-detail></project-detail>'
+        }).
+		when('/projects/areas', {
+          template: '<areas-special></areas-special>'
+        }).
+		when('/projects/education', {
+          template: '<education-training></education-training>'
+        }).
+		when('/projects/career', {
+          template: '<career-synopsis></career-synopsis>'
         }).
         otherwise('/index');
     }
