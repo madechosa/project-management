@@ -10,7 +10,7 @@ angular.
 
       $routeProvider.
         when('/projects/summary', {
-http://localhost:3000/#          template: '<project-detail></project-detail>'
+		template: '<project-detail></project-detail>'
         }).
 		when('/projects/areas', {
           template: '<areas-special></areas-special>'
@@ -20,6 +20,9 @@ http://localhost:3000/#          template: '<project-detail></project-detail>'
         }).
 		when('/projects/career', {
           template: '<career-synopsis></career-synopsis>'
+        }).
+		when('/projects/exp', {
+          template: '<exp-proj></exp-proj>'
         }).
         otherwise('/index');
     }
