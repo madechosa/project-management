@@ -15,7 +15,7 @@ router.get('/:id', function(req, res, next) {
 	var sql = 'SELECT id, name FROM project WHERE id = ' + req.params.id;
 
 	var connection = mysql.createConnection({
-		host: 'localhost',
+		host: '10.164.37.53',
 		database:'training',
 		user: 'training',
 		password:'training'
