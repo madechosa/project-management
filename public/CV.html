@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="cv">
+	
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	 <link href="dashboard.css" rel="stylesheet">
+    </head>
+		<body ng-controller="CvController as cv">	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">{{cv.account.user}}</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <!--<li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li> -->
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+	  <br><br>
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active" ><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+           <!-- <li ng-repeat="part in cv.parts"><a href="#">{{part.part}}</a></li>-->
+				<li><a href="#" ng-click="cv.showdashboard1()">Summary of Qualifications</a></li>
+				<li><a href="#" ng-click="cv.showdashboard2()">Areas of Specialization</a></li>
+				<li><a href="#" ng-click="cv.showdashboard3()">Education and Training</a></li>
+				<li><a href="#" ng-click="cv.showdashboard4()">Career Synopsis</a></li>	               
+				<li><a href="#" ng-click="cv.showdashboard5()">Project Experience</a></li>	               
+          </ul>        
+        </div>
+		
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header" align="center" >Dashboard</h1>         
+						
+			<div class="table-responsive" ng-show="cv.dashboard">
+			<h2 class="sub-header">Summary of Qualifications</h2>
+				<h3>Fisrt Part</h3>
+			 <!-- call the specific part of resume depends on the tab -->
+          </div>
+		  
+		  <div class="table-responsive" ng-show="cv.dashboard2">
+		  <h2 class="sub-header">Areas of Specialization</h2>
+				<h3>Second Part</h3>
+			 <!-- call the specific part of resume depends on the tab -->
+          </div>
+		  
+		  <div class="table-responsive" ng-show="cv.dashboard3">
+		  <h2 class="sub-header">Education and Training</h2>
+				<h3>Third Part</h3>
+			 <!-- call the specific part of resume depends on the tab -->
+          </div>
+		  
+		  <div class="table-responsive" ng-show="cv.dashboard4">
+		  <h2 class="sub-header">Career Synopsis</h2>
+				<h3>Fourth Part</h3>
+			 <!-- call the specific part of resume depends on the tab -->
+          </div>
+		  
+		  <div class="table-responsive" ng-show="cv.dashboard5">
+		  <h2 class="sub-header">Project Experience</h2>
+				<h3>Fifth Part</h3>
+			 <!-- call the specific part of resume depends on the tab -->
+          </div>
+		  
+        </div>
+      </div>
+    </div>
+	<script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script type="text/javascript" src="cvapp.js"></script>	
+		
+
+	</body>
+</html>
