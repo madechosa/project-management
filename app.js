@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var projects = require('./routes/projects');
+var wsor = require('./routes/wsor');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', users);
 app.use('/projects', projects);
+app.use('/wsor', wsor);
 app.use('/components', express.static(path.join(__dirname, '/node_modules')))
 
 app.use('/*', function(req, res) {

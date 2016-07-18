@@ -1,4 +1,5 @@
 angular.module('pmApp', [
   'ngRoute',
-  'projectDetail'
+  'projectDetail',
+  'projectRegistration'
 ]);
