@@ -2,5 +2,6 @@ angular.module('pmApp', [
   'ngRoute',
   'projectDetail',
   'projectRegistration',
-  'projectLogin'
+  'projectLogin',
+  'careerSynopsis'
 ]);
