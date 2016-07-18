@@ -24,6 +24,9 @@ angular.
 		when('/projects/exp', {
           template: '<exp-proj></exp-proj>'
         }).
+		when('/wsor/register', {
+          template: '<project-registration></project-registration>'
+        }).
         otherwise('/index');
     }
   ]);

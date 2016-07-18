@@ -1,0 +1,45 @@
+	
+	<div class="row col-md-6">		
+		<form name="registerForm" ng-submit="submit()">
+			<!--
+			<div align="center">
+				<h2>Employee Registration</h2>
+			</div>
+			-->
+			<div class="form-group" ng-class="{ 'has-error' : registerForm.employee.emp_id.$invalid && !registerForm.employee.emp_id.$pristine }">
+			  <label for="emp_id">Employee ID:</label>
+			  <input type="text" class="form-control" ng-model="employee.emp_id" ng-required="true">
+			  <!--
+			  <p ng-show="registerForm.employee.emp_id.$invalid && !registerForm.employee.emp_id.$pristine" class="help-block">Employee ID is required.</p>
+			  -->
+			</div>
+			<div class="form-group">
+			  <label for="mail">E-mail:</label>
+			  <input type="mail" class="form-control" ng-model="employee.mail" ng-required="true">
+			</div>
+			<div class="form-group">
+			  <label for="firstname">First Name:</label>
+			  <input type="text" class="form-control" ng-model="employee.firstname" ng-required="true">
+			</div>
+			<div class="form-group">
+			  <label for="lastname">Last Name:</label>
+			  <input type="text" class="form-control" ng-model="employee.lastname" ng-required="true">
+			</div>
+			<div class="form-group">
+			  <label for="nickname">Nickname:</label>
+			  <input type="text" class="form-control" ng-model="employee.nickname" ng-required="true">
+			</div>
+			<div class="form-group">
+			  <label for="password">Password:</label>
+			  <input type="password" class="form-control" ng-model="employee.password" ng-required="true">
+			</div>
+			<div class="form-group">
+			  <label for="confirm">Confirm Password:</label>
+			  <input type="password" class="form-control">
+			</div>
+			<div align="right">
+				<input id="btnSubmit" type="submit" class="btn btn-primary">
+				<button id="btnCancel" type="button" class="btn btn-primary">Cancel</button>
+			</div>
+		</form>
+	</div>
