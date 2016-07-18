@@ -27,6 +27,9 @@ angular.
 		when('/wsor/register', {
           template: '<project-registration></project-registration>'
         }).
+		when('/init', {
+          template: '<project-login></project-login>'
+        }).
         otherwise('/index');
     }
   ]);
