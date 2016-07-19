@@ -2,8 +2,8 @@ angular.
   module('projectRegistration').
   component('projectRegistration', {
     templateUrl: 'project-registration/project-registration.template.html',
-    controller: ['$scope', '$http', 
-      function ProjectRegistrationController($scope, $http) {
+    controller: ['$scope', '$http', '$location',
+      function ProjectRegistrationController($scope, $http, $location) {
 		  var self = this;
 		  //console.log("routeParams:" + $routeParams.projectId);
 		  $http.get('/wsor/register').then(function(response) {
@@ -21,6 +21,11 @@ angular.
 			}, function errorCallback(response) {
 				console.log('di ok');
 			});
+		  }
+		  $scope.cancel = function() {
+			console.log('dito tau cancel');
+			$location.path('/init');
+			//$scope.$apply();
 		  }
 		}]
   });
