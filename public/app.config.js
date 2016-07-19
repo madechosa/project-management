@@ -33,3 +33,14 @@ angular.
         otherwise('/index');
     }
   ]);
+
+    angular.
+  module('pmApp').
+controller('mainController', function($scope){
+	
+	$scope.loggedIN = function(){
+       $scope.logged = true;
+	};
+
+});
+  
