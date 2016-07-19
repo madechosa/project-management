@@ -9,20 +9,23 @@ angular.
       $locationProvider.hashPrefix('!');
 
       $routeProvider.
-        when('/projects/summary', {
+        when('/projects/basic', {
+		template: '<basic-info></basic-info>'
+        }). 
+		when('/projects/summary', {
 		template: '<project-detail></project-detail>'
         }).
 		when('/projects/areas', {
           template: '<areas-special></areas-special>'
         }).
-		when('/projects/education', {
-          template: '<education-training></education-training>'
+		when('/projects/seminar', {
+          template: '<seminar-training></seminar-training>'
         }).
 		when('/projects/career', {
           template: '<career-synopsis></career-synopsis>'
         }).
 		when('/projects/exp', {
-          template: '<exp-proj></exp-proj>'
+          template: '<project-experience></project-experience>'
         }).
 		when('/wsor/register', {
           template: '<project-registration></project-registration>'

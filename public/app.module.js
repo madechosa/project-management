@@ -3,5 +3,8 @@ angular.module('pmApp', [
   'projectDetail',
   'projectRegistration',
   'projectLogin',
-  'careerSynopsis'
+  'careerSynopsis',
+  'basicInfo',
+  'seminarTraining',
+  'projectExperience'
 ]);
