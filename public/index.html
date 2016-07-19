@@ -18,45 +18,29 @@
 		<link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
 		<link href="dashboard.css" rel="stylesheet">
 	</head>
-	<body>	
+	
+		<body ng-controller="mainController">	
 	
 	<nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">{{cv.account.user}}</a>
+        <div class="navbar-header">      
+          <a class="navbar-brand" ng-click="loggedIN()" href="#">New</a>          
+          <a class="navbar-brand" href="#">View</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <!--<li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li> -->
+            <li><a>Joseph</a></li>
             <li><a href="#">Logout</a></li>
           </ul>
         </div>
       </div>
     </nav>
 	
-	<div class="container-fluid" >
+	<div class="container-fluid">
       <div class="row">
-	  <br><br>
+				<br><br>
         <div class="col-sm-3 col-md-2 sidebar">
-		
-          <ul class="nav nav-sidebar">
-            <li class="active" ><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-           <!-- <li ng-repeat="part in cv.parts"><a href="#">{{part.part}}</a></li>-->
-				<li><a href="#!/projects/summary">Summary of Qualifications</a></li>
-				<li><a href="#!/projects/areas">Areas of Specialization</a></li>
-				<li><a href="#!/projects/education">Education and Training</a></li>
-				<li><a href="#!/projects/career" >Career Synopsis</a></li>	               
-				<li><a href="#!/projects/exp" >Project Experience</a></li>	               
-          </ul>     
-		  
+		<div ng-show="logged" ng-include="'project-dashboard/html/project-view.template/project-view.template.html'"></div>
         </div>		
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header" align="center" >Dashboard</h1>       				
@@ -65,26 +49,27 @@
 			 <!-- call the specific part of resume depends on the tab -->
             </div>				  
 		</div>
-	  </div>
+		</div>
 	</div>
-		
-	<nav class="navbar navbar-inverse navbar-fixed-bottom">
+	
+		<nav class="navbar navbar-inverse navbar-fixed-bottom">
 		<div class="text-footer">
 			© Fujitsu 2016
 		</div>
-	</nav>
-	
-	</body>
+		</nav>
+		
+	</body>	
 		<script src="/components/angular/angular.js"></script>
 		<script src="/components/angular-route/angular-route.min.js"></script>
 		<script src="app.module.js"></script>
 		<script src="app.config.js"></script>
-		<script src="project-detail/project-detail.module.js"></script>
-		<script src="project-detail/JS/project-detail/project-detail.component.js"></script>
-		<script src="project-detail/JS/project-detail1/project-detailareas.component.js"></script>
-		<script src="project-detail/JS/project-detail2/project-deataileducation.component.js"></script>
-		<script src="project-detail/JS/project-detail3/project-detailcareer.component.js"></script>
-		<script src="project-detail/JS/project-detail4/project-detailexp.components.js"></script>
+		<script src="project-dashboard/project-detail.module.js"></script>
+		<script src="project-dashboard/JS/project-detail/project-detail.component.js"></script>
+		<script src="project-dashboard/JS/project-detail1/project-detailareas.component.js"></script>
+		<script src="project-dashboard/JS/project-detail2/project-deataileducation.component.js"></script>
+		<script src="project-dashboard/JS/project-detail3/project-detailcareer.component.js"></script>
+		<script src="project-dashboard/JS/project-detail4/project-detailexp.components.js"></script>
+		<script src="project-dashboard/JS/project-detail5/project-detailview.component.js"></script>
 		<script src="project-registration/project-registration.module.js"></script>
 		<script src="project-registration/project-registration.component.js"></script>
 		<script src="project-login/project-login.module.js"></script>
