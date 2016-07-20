@@ -34,31 +34,20 @@ angular.
         }).
         otherwise('/init');
     }
-	angular.
+	]);
+    angular.
   module('pmApp').
-
 controller('mainController', function($scope, $cookies, $location){
 	
 	var cookieVar = $cookies.get('scempid');
 	if (cookieVar == null) {
 		$location.path('/init');
 	}
-  function ProjectDetailController($http, $routeParams) {
-		  var self = this;
-		  console.log("routeParams:" + $routeParams.projectId);
-		  $http.get('/projects/' + $routeParams.projectId).then(function(response) {
-			 console.log(response.data);
-			 self.projects = response.data; 
-		  });
-		  
-		  this.logout=logedout; 
-		  
-			var logedout = {
-					$cookies.remove("scempid");
-				};
-		  
-		}]
 	
-	
-  ]);
+	$scope.loggedIN = function(){
+       $scope.logged = true;
+	};
+
+});
+  
   
