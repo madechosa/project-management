@@ -19,38 +19,25 @@
 		<link href="dashboard.css" rel="stylesheet">
 	</head>
 	
-		<body ng-controller="mainController">	
+		<body>	
 	
 	<nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">      
-          <a class="navbar-brand" ng-click="loggedIN()" href="#">New</a>          
+          <a class="navbar-brand" href="#!/projects/view">New</a>          
           <a class="navbar-brand" href="#">View</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a>Joseph</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="#">Logout</a></li> <!-- todo clear ("scempid")-->
           </ul>
         </div>
       </div>
-    </nav>
-	
-	<div class="container-fluid">
-      <div class="row">
-				<br><br>
-        <div class="col-sm-3 col-md-2 sidebar">
-		<div ng-show="logged" ng-include="'project-dashboard/html/project-view.template/project-view.template.html'"></div>
-        </div>		
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header" align="center" >Dashboard</h1>       				
+    </nav>	
 			<div class="table-responsive">
 				<div ng-view></div>
-			 <!-- call the specific part of resume depends on the tab -->
-            </div>				  
-		</div>
-		</div>
-	</div>
+            </div>		
 	
 		<nav class="navbar navbar-inverse navbar-fixed-bottom">
 		<div class="text-footer">
