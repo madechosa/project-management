@@ -2,6 +2,7 @@ angular.
   module('pmApp').
   config(['$locationProvider' ,'$routeProvider', 
     function config($locationProvider, $routeProvider) {
+	  console.log('app.config');
 	  console.log($routeProvider);
 	  console.log($locationProvider);
 			
@@ -35,19 +36,24 @@ angular.
         otherwise('/init');
     }
 	]);
-    angular.
-  module('pmApp').
-controller('mainController', function($scope, $cookies, $location){
 	
-	var cookieVar = $cookies.get('scempid');
-	if (cookieVar == null) {
+angular.
+  module('pmApp').run(function($rootScope, $cookies, $location) {
+	  
+  $rootScope.$on('$routeChangeStart', function(next, current) { 
+	var scempid = $cookies.get('scempid');
+	if (scempid==null) {
+		console.log('user:'+scempid);
 		$location.path('/init');
+	} else {
+		if ($location.path=='init') {
+			$location.path('/projects/view');
+		}
 	}
-	
-	$scope.loggedIN = function(){
-       $scope.logged = true;
-	};
-
+  }); 
+  
 });
+
+
   
   

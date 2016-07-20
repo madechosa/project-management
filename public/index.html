@@ -7,7 +7,7 @@
 		<title>Welcome to SPA</title>
 		<style type="text/css">
 		body {
-			padding-bottom: 40px;
+			padding-bottom: 70px;
 		}
 		.text-footer {
 			text-align: right;
@@ -19,44 +19,48 @@
 		<link href="dashboard.css" rel="stylesheet">
 	</head>
 	
-		<body>	
-	
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">      
-          <a class="navbar-brand" href="#!/projects/view">New</a>          
-          <a class="navbar-brand" href="#">View</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a>Joseph</a></li>
-            <li><a href="#">Logout</a></li> <!-- todo clear ("scempid")-->
-          </ul>
-        </div>
-      </div>
-    </nav>	
-			<div class="table-responsive">
-				<div ng-view></div>
-            </div>		
-	
-		<nav class="navbar navbar-inverse navbar-fixed-bottom">
-		<div class="text-footer">
-			© Fujitsu 2016
-		</div>
-		</nav>
+	<body>	
+	  <div class="container container-fluid">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container-fluid">
+			<div class="navbar-header">      
+			  <a class="navbar-brand" href="#!/projects/view">New</a>          
+			  <a class="navbar-brand" target="_self">View</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				<li><a>Joseph</a></li>
+				<li><a href="#!/init">Logout</a></li> <!-- todo clear ("scempid")-->
+			  </ul>
+			</div>
+		  </div>
+		</nav>	
 		
+		<div class="table-responsive col-md-12">
+			<div ng-view></div>
+		</div>		
+		
+		
+		<nav class="navbar navbar-inverse navbar-fixed-bottom">
+			<div class="text-footer">
+				© Fujitsu 2016
+			</div>
+		</nav>
+	  </div>
 	</body>	
-		<script src="/components/angular/angular.js"></script>
-		<script src="/components/angular-route/angular-route.min.js"></script>
-		<script src="/components/angular-cookies/angular-cookies.min.js"></script>
-		<script src="app.module.js"></script>
-		<script src="app.config.js"></script>
-		<script src="project-detail/project-detail.module.js"></script>
-		<script src="project-detail/project-detail.component.js"></script>
-		<script src="project-registration/project-registration.module.js"></script>
-		<script src="project-registration/project-registration.component.js"></script>
-		<script src="project-login/project-login.module.js"></script>
-		<script src="project-login/project-login.component.js"></script>
-		<script src="career-synopsis/career-synopsis.module.js"></script>
-		<script src="career-synopsis/career-synopsis.component.js"></script>
+	
+	<script src="/components/angular/angular.js"></script>
+	<script src="/components/angular-route/angular-route.min.js"></script>
+	<script src="/components/angular-cookies/angular-cookies.min.js"></script>
+	<script src="app.module.js"></script>
+	<script src="app.config.js"></script>
+	<script src="project-detail/project-detail.module.js"></script>
+	<script src="project-detail/project-detail.component.js"></script>
+	<script src="project-registration/project-registration.module.js"></script>
+	<script src="project-registration/project-registration.component.js"></script>
+	<script src="project-login/project-login.module.js"></script>
+	<script src="project-login/project-login.component.js"></script>
+	<script src="career-synopsis/career-synopsis.module.js"></script>
+	<script src="career-synopsis/career-synopsis.component.js"></script>
+	
 </html>
