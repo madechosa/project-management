@@ -1,1 +1,1 @@
-angular.module('projectLogin', ['ngRoute']);
+angular.module('projectLogin', ['ngRoute', 'ngCookies']);

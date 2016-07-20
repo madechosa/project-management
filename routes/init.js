@@ -40,14 +40,16 @@ router.get('/login', function(req, res) {
 		
             if (rows.length > 0) {
                 console.log('success');
-                res.end('Hi ' + req.query.emp_id + '!! You have successfully log in.');
+                res.send('0');
+                //res.end('Hi ' + req.query.emp_id + '!! You have successfully log in.');
             } else {
 				console.log('fail');
-                res.end('Hi ' + req.query.emp_id + '!! You have not successfully log in.');
+                res.send('1');
+                //res.end('Hi ' + req.query.emp_id + '!! You have not successfully log in.');
             }
     });
 	
-	res.send("Hello POST init");
+	//res.send("Hello POST init");
 });
 
 module.exports = router;
