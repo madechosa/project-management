@@ -9,14 +9,17 @@ angular.
       $locationProvider.hashPrefix('!');
 
       $routeProvider.
-        when('/projects/summary', {
+        when('/projects/basic', {
+		template: '<basic-info></basic-info>'
+        }). 
+		when('/projects/summary', {
 		template: '<project-detail></project-detail>'
         }).
 		when('/projects/areas', {
           template: '<areas-special></areas-special>'
         }).
-		when('/projects/education', {
-          template: '<education-training></education-training>'
+		when('/projects/seminar', {
+          template: '<seminar-training></seminar-training>'
         }).
 		when('/projects/career', {
           template: '<career-synopsis></career-synopsis>'
@@ -25,7 +28,7 @@ angular.
           template: '<view-proj></view-proj>'
         }).
 		when('/projects/exp', {
-          template: '<exp-proj></exp-proj>'
+          template: '<project-experience></project-experience>'
         }).
 		when('/wsor/register', {
           template: '<project-registration></project-registration>'
@@ -37,23 +40,32 @@ angular.
     }
 	]);
 	
+	
 angular.
   module('pmApp').run(function($rootScope, $cookies, $location) {
 	  
   $rootScope.$on('$routeChangeStart', function(next, current) { 
-	var scempid = $cookies.get('scempid');
-	if (scempid==null) {
-		console.log('user:'+scempid);
+	 $rootScope.scempid = $cookies.get('scempid');
+	 
+	 console.log('user:'+$rootScope.scempid);
+	if ($rootScope.scempid==null) {
+		$rootScope.navbar = true;
+		console.log('user:'+$rootScope.scempid);
 		$location.path('/init');
 	} else {
-		if ($location.path=='init') {
+		$rootScope.navbar = false;			
+		if ($location.$$path=='/init') {
 			$location.path('/projects/view');
 		}
+		if ($location.$$path=='/logout'){
+		$location.path('/init');
+			$cookies.remove('scempid');
+		}
+	
 	}
-  }); 
-  
+		
+
+  });  
+
 });
 
-
-  
-  
