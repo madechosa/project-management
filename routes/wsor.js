@@ -33,13 +33,21 @@ router.post('/register', function(req, res) {
 	
 	var objConn = createConn();
     objConn.query('UPDATE basic_information SET nickname = ?, password = ?, active_flag = ? WHERE empid = ? and active_flag = ?', [req.body.nickname, req.body.password, 'Y', req.body.emp_id, 'A'], function(error, rows) {
+        var data = {
+            result: '',
+            message: ''
+        };
         if (error) {
             console.log(error.message);
-            res.end(error.message);
+            data.result = '1';
+            data.message = 'Oops!! Something went wrong. :( Please try again later.';
+            res.send(data);
         } else {
             if (rows.changedRows > 0) {
                 console.log('success');
-                res.end('Hi ' + req.body.nickname + '!! You have successfully registered.');
+                data.result = '0';
+                data.message = 'Hi ' + req.body.nickname + '!! You have successfully registered.';
+                res.send(data);
             } else {
                 var post = {
                     empid: req.body.emp_id,
@@ -55,17 +63,20 @@ router.post('/register', function(req, res) {
                 objConn.query('INSERT INTO basic_information SET ?', post, function(error) {
                     if (error) {
                         console.log(error.message);
-                        res.end(error.message);
+                        data.result = '1';
+                        data.message = 'Oops!! Something went wrong. :( Please try again later.';
+                        res.send(data);
                     } else {
                         console.log('success');
-                        res.end('Hi ' + req.body.nickname + '!! You have now partially created your account.\nAdmin has been notified.');
+                        data.result = '0';
+                        data.message = 'Hi '+ req.body.nickname + '!! now partially created your account. Admin has been notified.';
+                        res.send(data);
                     }
                 });
             }
         }
     });
 	
-	res.send("Hello POST register");
 });
 
 module.exports = router;

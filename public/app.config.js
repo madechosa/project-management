@@ -48,18 +48,24 @@ angular.
 	 $rootScope.scempid = $cookies.get('scempid');
 	 
 	 console.log('user:'+$rootScope.scempid);
-	if ($rootScope.scempid==null) {
+	if ($rootScope.scempid==null && $location.$$path!='/wsor/register') {
 		$rootScope.navbar = true;
 		console.log('user:'+$rootScope.scempid);
 		$location.path('/init');
-	} else {
-		$rootScope.navbar = false;			
+	} 
+	
+	else {
+		$rootScope.navbar = true;			
 		if ($location.$$path=='/init') {
 			$location.path('/projects/view');
 		}
+		if ($location.$$path=='/projects/summary') {
+			$rootScope.navbar = false;	
+		}
 		if ($location.$$path=='/logout'){
-		$location.path('/init');
+			$location.path('/init');
 			$cookies.remove('scempid');
+			$cookies.remove('scname');
 		}
 	
 	}

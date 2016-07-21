@@ -1,11 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
-/*
-var paramsParser = require('params-parser');
 
-var urlencodedParser = paramsParser.urlencoded({ extended: false })
-*/
 function createConn() {
     var connection = mysql.createConnection({
         user: 'training',
@@ -17,42 +13,37 @@ function createConn() {
     return connection;
 }
 
-/*
-function Project(id, name) {
-	this.id = id;
-	this.name = name;
-}
-*/
-
 router.get('/', function(req, res, next) {
   res.send("Hello GET init");
 });
 
 router.get('/login', function(req, res) {
-	console.log('yyyyyyyyy init');
 	
 	var objConn = createConn();
     console.log(req.query.emp_id);
 	console.log(req.query.password);
 	objConn.query('SELECT firstname FROM basic_information where empid = ? AND password = ? AND active_flag = ?', [req.query.emp_id, req.query.password, 'Y'], function(error, rows) {
-		console.log('xx');
-		console.log(rows.length);
 		
-            if (rows.length > 0) {
-                console.log('success');
-				var firstNameVar = rows[0].firstname;
-				console.log('fvar :'+firstNameVar);
-				res.send(firstNameVar);
-                //res.send('0');
-                //res.end('Hi ' + req.query.emp_id + '!! You have successfully log in.');
-            } else {
-				console.log('fail');
-                res.send('1');
-                //res.end('Hi ' + req.query.emp_id + '!! You have not successfully log in.');
-            }
+		console.log(rows.length);
+
+        var data = {
+            result: '',
+            firstname: '',
+            emp_id: ''
+        };
+		
+        if (rows.length > 0) {
+            console.log('success');
+            data.result = '0';
+            data.firstname = rows[0].firstname;
+            data.emp_id = rows[0].emp_id;
+            res.send(data);
+        } else {
+            console.log('fail');
+            res.send('1');
+        }
     });
 	
-	//res.send("Hello POST init");
 });
 
 module.exports = router;
