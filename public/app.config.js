@@ -1,8 +1,8 @@
 angular.
   module('pmApp').
-  config(['$locationProvider' ,'$routeProvider',
+  config(['$locationProvider' ,'$routeProvider', 
     function config($locationProvider, $routeProvider) {
-		console.log("here");
+	  console.log('app.config');
 	  console.log($routeProvider);
 	  console.log($locationProvider);
 			
@@ -24,6 +24,9 @@ angular.
 		when('/projects/career', {
           template: '<career-synopsis></career-synopsis>'
         }).
+		when('/projects/view', {
+          template: '<view-proj></view-proj>'
+        }).
 		when('/projects/exp', {
           template: '<project-experience></project-experience>'
         }).
@@ -33,17 +36,36 @@ angular.
 		when('/init', {
           template: '<project-login></project-login>'
         }).
-        otherwise('/index');
+        otherwise('/init');
     }
-  ]);
-
-    angular.
-  module('pmApp').
-controller('mainController', function($scope){
+	]);
 	
-	$scope.loggedIN = function(){
-       $scope.logged = true;
-	};
+	
+angular.
+  module('pmApp').run(function($rootScope, $cookies, $location) {
+	  
+  $rootScope.$on('$routeChangeStart', function(next, current) { 
+	 $rootScope.scempid = $cookies.get('scempid');
+	 
+	 console.log('user:'+$rootScope.scempid);
+	if ($rootScope.scempid==null) {
+		$rootScope.navbar = true;
+		console.log('user:'+$rootScope.scempid);
+		$location.path('/init');
+	} else {
+		$rootScope.navbar = false;			
+		if ($location.$$path=='/init') {
+			$location.path('/projects/view');
+		}
+		if ($location.$$path=='/logout'){
+		$location.path('/init');
+			$cookies.remove('scempid');
+		}
+	
+	}
+		
+
+  });  
 
 });
-  
+

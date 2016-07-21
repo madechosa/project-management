@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
   res.send("Hello Projects");
 });
 
-router.get('/:id', function(req, res, next) {
+/*router.get('/:id', function(req, res, next) {
 	var sql = 'SELECT id, name FROM project WHERE id = ' + req.params.id;
 
 	var connection = mysql.createConnection({
@@ -39,5 +39,6 @@ router.get('/:id', function(req, res, next) {
 	});
 	
 });
+*/
 
 module.exports = router;
