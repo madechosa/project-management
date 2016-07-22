@@ -51,19 +51,15 @@ angular.
   $rootScope.$on('$routeChangeStart', function(next, current) { 
 	 $rootScope.scempid = $cookies.get('scempid');
 	 
-	 console.log('user:'+$rootScope.scempid);
 	if ($rootScope.scempid==null && $location.$$path!='/wsor/register') {
 		$rootScope.navbar = true;
-		console.log('user:'+$rootScope.scempid);
 		$location.path('/init');
-	} 
-	
-	else {
+	}  else {
 		$rootScope.navbar = true;			
 		if ($location.$$path=='/init') {
 			$location.path('/projects/view');
 		}
-		if ($location.$$path=='/projects/summary') {
+		if ($location.$$path=='/projects/summary' || $location.$$path=='/projects/view') {
 			$rootScope.navbar = false;	
 		}
 		if ($location.$$path=='/logout'){

@@ -13,14 +13,18 @@ angular.
 				console.log('yyyy');
 				var data = $scope.employee; 
 				console.log(data);
-				$http.post('/wsor/register', data).then(function successCallback(response) {
-					//$location.path('/init').search('msg',response.data);
-					$scope.msg = 
+				$http.post('/wsor/register', data).then(function(response) {
+					if (response.data.result == '1') {
+						$scope.msg = 
+						'<div class="alert alert-danger col-md-12" role="alert"><strong>Oops!!</strong> Something wrong, please try again later.</div>';
+						;
+						login;
+					} else {
+						$scope.msg = 
 						'<div class="alert alert-success col-md-12" role="alert"><strong>Yay!!</strong> You have successfully registered. <br> Redirecting to login page in 5 seconds..</div>'
-					;
+						;
 					$timeout(login, 5000);
-				}, function errorCallback(response) {
-					login;
+					}
 				});
 		  }
 		  
@@ -29,7 +33,7 @@ angular.
 		  };
 
 		  $scope.cancel = function() {
-				$location.path('/init');
+			  login;
 		  }
 		}]
   });
