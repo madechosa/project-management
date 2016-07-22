@@ -22,7 +22,7 @@ router.get('/login', function(req, res) {
 	var objConn = createConn();
     console.log(req.query.emp_id);
 	console.log(req.query.password);
-	objConn.query('SELECT firstname FROM basic_information where empid = ? AND password = ? AND active_flag = ?', [req.query.emp_id, req.query.password, 'Y'], function(error, rows) {
+	objConn.query('SELECT firstname, empid FROM basic_information where empid = ? AND password = ? AND active_flag = ?', [req.query.emp_id, req.query.password, 'Y'], function(error, rows) {
 		
 		console.log(rows.length);
 
@@ -36,7 +36,7 @@ router.get('/login', function(req, res) {
             console.log('success');
             data.result = '0';
             data.firstname = rows[0].firstname;
-            data.emp_id = rows[0].emp_id;
+            data.emp_id = rows[0].empid;
             res.send(data);
         } else {
             console.log('fail');
