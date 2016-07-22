@@ -12,6 +12,9 @@ angular.
         when('/projects/basic', {
 		template: '<basic-info></basic-info>'
         }). 
+		//when('/projects/qualifications', {
+		//template: '<project-qualifications></project-qualifications>'
+       // }).
 		when('/projects/summary', {
 		template: '<project-detail></project-detail>'
         }).
@@ -24,7 +27,7 @@ angular.
 		when('/projects/career', {
           template: '<career-synopsis></career-synopsis>'
         }).
-		when('/projects/exp', {
+		when('/projects/experience', {
           template: '<project-experience></project-experience>'
         }).
 		when('/wsor/register', {

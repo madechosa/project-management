@@ -1,0 +1,25 @@
+ <div class="col-sm-3 col-md-2 sidebar">
+		
+          <ul class="nav nav-sidebar">
+           
+           <!-- <li ng-repeat="part in cv.parts"><a href="#">{{part.part}}</a></li>-->
+				<li><a href="#!/projects/basic">Basic Information</a></li>
+				<li class="active"><a href="#!/projects/qualifications">Summary of Qualifications</a></li>
+				<li><a href="#!/projects/areas">Areas of Specialization</a></li>
+				<li><a href="#!/projects/seminar">Seminars and Training</a></li>
+				<li><a href="#!/projects/career" >Career Synopsis</a></li>	               
+				<li><a href="#!/projects/experience" >Project Experience</a></li>	               
+          </ul>     
+		  
+        </div>
+
+<h1>Summary of Qualifications</h1>
+
+  <div class="form-group" ng-repeat="qualifications in qualifications">
+    <label for="comment">Comment:</label>
+    <input type="text" class="form-control" rows="3" id="comment" ng-required="true"></input>
+	<button type="button" class="btn btn-primary" ng-click="removeQualification()">Cancel</button>
+  </div>
+
+  <button type="button" class="btn btn-primary" ng-click="addNewQualification()">Add</button>  
+</form>

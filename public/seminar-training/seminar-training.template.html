@@ -1,0 +1,52 @@
+ <div class="col-sm-3 col-md-2 sidebar">
+		
+          <ul class="nav nav-sidebar">
+           
+           <!-- <li ng-repeat="part in cv.parts"><a href="#">{{part.part}}</a></li>-->
+				<li><a href="#!/projects/basic">Basic Information</a></li>
+				<li><a href="#!/projects/qualifications">Summary of Qualifications</a></li>
+				<li><a href="#!/projects/areas">Areas of Specialization</a></li>
+				<li class="active"><a href="#!/projects/seminar">Seminars and Training</a></li>
+				<li><a href="#!/projects/career" >Career Synopsis</a></li>	               
+				<li><a href="#!/projects/experience" >Project Experience</a></li>	               
+          </ul>     
+		  
+        </div>
+		
+<h1>Seminars and Training</h1>
+
+	
+		<form class="form-vertical" name="seminarForm" ng-submit="submit()">
+			<div class="form-group" ng-repeat="seminar in seminar">
+					<div class="form-group" style='margin-top:50px;' ng-class="{ 'has-error' : seminarForm.empseminar.empid.$invalid && !seminarForm.empseminar.empid.$pristine }">
+						<div class="col-sm-10">
+							<input type="text" style='margin-bottom:5px;' class="form-control" ng-model="empseminar.empid" id="empid" name="empid" placeholder="Employee ID"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10">
+							<input type="text" class="form-control" ng-model="empseminar.seminarTrainings" id="seminarTrainings" name = "seminarTrainings" style='margin-bottom:5px;' placeholder="Seminar/Training">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10">
+							<input type="date" class="form-control" ng-model="empseminar.seminarDate" id= "seminarDate" style='margin-bottom:5px;'>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10">
+							<textarea class="form-control" ng-model="empseminar.seminarDesc" id="seminarDesc" name="seminarDesc" style='margin-bottom:40px;' rows="4" cols="50" style='margin-bottom:5px;' placeholder="Description"></textarea>
+						</div>
+					</div>
+				
+				<button id="btnCancel" type="button" class="btn btn-primary" ng-click="cancel()"style="float:right; margin-top:200px; margin-right:20px;">Submit</button>
+			</div>
+		</form>  	   
+	
+		<div class="col-sm-10">
+			<button type="button" class="btn btn-primary" ng-click="addNewSeminar()">Add Seminar/Training</button>  
+			<button type="button" class="btn btn-primary" ng-click="removeSeminar()">Cancel</button>  
+		</div>
+		
+		
+		
