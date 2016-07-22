@@ -1,0 +1,75 @@
+
+
+	  <div class="col-sm-3 col-md-2 sidebar">
+		
+          <ul class="nav nav-sidebar">
+			<li><a href="#!/projects/basic">Basic Information</a></li>
+			<li><a href="#!/projects/qualifications">Summary of Qualifications</a></li>
+			<li><a href="#!/projects/areas">Areas of Specialization</a></li>
+			<li><a href="#!/projects/seminar">Seminars and Training</a></li>
+			<li class="active"><a href="#!/projects/career" >Career Synopsis</a></li>	               
+			<li><a href="#!/projects/experience" >Project Experience</a></li>	               
+          </ul>     
+		  
+        </div>
+
+		<h1>Career Synopsis</h1>
+	
+<form class="form-vertical" name="basicForm" ng-submit="submit()">
+	<div class="form-group" ng-repeat="career in career" >
+		<div class="form-group" style='margin-top:50px;' ng-class="{ 'has-error' : careerForm.careersy.empid.$invalid && !basicForm.career.empid.$pristine }">
+			<label for="empid"> Employee ID:</label>
+			<input type="text" style='margin-bottom:5px;' class="form-control" ng-model="careersy.empid" ng-required="true" id="empid" name="empid" placeholder="Employee ID"/>
+		</div>
+		
+		<div class="form-group">
+			<label for="company">Company Name:</label>
+			<input type="text" class="form-control" ng-model="careersy.company" id="company" name="company "ng-required="true" placeholder="Company Name">
+		  
+		</div>
+			
+		<div class="form-group">
+			  <label for="position">Position:</label>
+			  <input type="text" class="form-control" ng-model="careersy.position" id="position" name="position" ng-required="true" placeholder="Position">
+			   
+		</div>
+		
+		<div class="form-group"style='margin-top:20px;'>
+			<label for="Duration" class="col-sm-2 control-label">Duration:</label>
+		</div>
+		
+		<div class="col-sm-3">
+			<input type="date" class="form-control" id="Duration" style='margin-bottom:5px;' placeholder="MM/DD/YYYY" ng-model="careersy.date" id="date" name="date" />
+			
+		</div>
+		
+		<div class="col-sm-3">
+			<input type="date" class="form-control" id="Duration" style='margin-bottom:5px;' name="To: MM/DD/YYYY" ng-model="careersy.date" id="date" name="date"/>
+
+		</div>
+  		<!-- checkbox -->
+		<div class="checkbox-inline">
+			<label><input id="chkPresent" name="chkPresent" type="checkbox" > Present</label>            
+		</div>
+		  
+	</div>
+
+	<div> 
+		<button type="button" class="btn btn-primary" ng-click="addNewCareer()">Add</button>
+		<button type="button" class="btn btn-primary" ng-click="removeCareer()">Cancel</button>
+	</div>
+	
+		<button id="btnCancel" type="button" class="btn btn-primary" style="float:right; margin-top:30px; margin-right:20px;" ng-click="cancel()">Cancel</button>
+		<input type="submit" class="btn btn-primary" style="float:right; margin-top:30px; margin-right:20px;"/>
+ 
+	
+
+</form>
+
+		
+	
+
+   
+
+
+</script>

@@ -1,0 +1,89 @@
+ <div class="col-sm-3 col-md-2 sidebar">
+		
+          <ul class="nav nav-sidebar">
+           
+           <!-- <li ng-repeat="part in cv.parts"><a href="#">{{part.part}}</a></li>-->
+				<li><a href="#!/projects/basic">Basic Information</a></li>
+				<li><a href="#!/projects/qualifications">Summary of Qualifications</a></li>
+				<li><a href="#!/projects/areas">Areas of Specialization</a></li>
+				<li class="active"><a href="#!/projects/seminar">Seminars and Training</a></li>
+				<li><a href="#!/projects/career" >Career Synopsis</a></li>	               
+				<li><a href="#!/projects/experience" >Project Experience</a></li>	               
+          </ul>     
+		  
+        </div>
+
+<div class="col-md-12">		
+	<div class="row">
+		<div class="col-md-2">
+		</div>	
+		<div class="col-md-10">
+			<h1>Seminars and Training</h1>
+			<br>
+		</div>
+	<div>
+	
+	<div class="col-md-12">
+		<form class="form-vertical" name="seminarForm" ng-submit="submit()">
+			<div class="form-group" ng-repeat="seminar in seminar">
+				<div class="row">
+					<div class="col-md-4">
+					</div>
+					<div class="form-group"  ng-class="{ 'has-error' : seminarForm.empseminar.empid.$invalid && !seminarForm.empseminar.empid.$pristine }">
+						<div class="col-md-8">
+							<input type="text"  class="form-control" ng-model="empseminar.empid" id="empid" name="empid" placeholder="Employee ID"/>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+					</div>
+					<div class="form-group" ng-class="{ 'has-error' : seminarForm.empseminar.empid.$invalid && !seminarForm.empseminar.empid.$pristine }">
+						<div class="col-md-8">
+							<input type="text" class="form-control" ng-model="empseminar.seminarTrainings" id="seminarTrainings" name = "seminarTrainings" placeholder="Seminar/Training">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+					</div>
+					<div class="form-group" ng-class="{ 'has-error' : seminarForm.empseminar.empid.$invalid && !seminarForm.empseminar.empid.$pristine }">
+						<div class="col-md-8">
+							<input type="date" class="form-control" ng-model="empseminar.seminarDate" id= "seminarDate">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+					</div>
+					<div class="form-group" ng-class="{ 'has-error' : seminarForm.empseminar.empid.$invalid && !seminarForm.empseminar.empid.$pristine }">
+						<div class="col-md-8">
+							<textarea class="form-control" ng-model="empseminar.seminarDesc" id="seminarDesc" name="seminarDesc" rows="4" cols="50" placeholder="Description"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-10" align="left">
+			<button type="button" class="btn btn-primary" ng-click="addNewSeminar()">Add Seminar/Training</button>  
+			<button type="button" class="btn btn-primary" ng-click="removeSeminar()">Cancel</button>  
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-10" align="right">
+			<button id="btnCancel" type="button" class="btn btn-primary" ng-click="cancel()">Submit</button>  
+		</div>		
+	</div>
+		
+</div>

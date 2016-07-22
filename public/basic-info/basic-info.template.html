@@ -1,0 +1,107 @@
+
+ <div class="col-sm-3 col-md-2 sidebar">
+		
+          <ul class="nav nav-sidebar">
+				<li class="active"><a href="#!/projects/basic">Basic Information</a></li>
+				<li><a href="#!/projects/qualifications">Summary of Qualifications</a></li>
+				<li><a href="#!/projects/areas">Areas of Specialization</a></li>
+				<li><a href="#!/projects/seminar">Seminars and Training</a></li>
+				<li><a href="#!/projects/career" >Career Synopsis</a></li>	               
+				<li><a href="#!/projects/experience" >Project Experience</a></li>	               
+          </ul>
+</div>
+
+<div>
+
+  <div class="row">
+	  <div class="col-md-2"></div>
+    <div class="col-md-4"><h1>Basic Information</h1><br></div>
+	  
+  </div>
+  
+<form class="form-vertical" name="basicForm" ng-submit="submit()">
+  <div class="col-md-2">
+  </div>
+  <div class="form-group" style='margin-top:50px;' ng-class="{ 'has-error' : basicForm.empbasic.empid.$invalid && !basicForm.empbasic.empid.$pristine }">
+    <label for="empid" class="col-md-3 control-label">Employee ID</label>
+    <div class="col-md-6">
+      <input type="text" style='margin-bottom:5px;' class="form-control" ng-model="empbasic.empid" id="empid" name="empid" placeholder="Employee ID"/>
+    </div>
+  </div>
+  <div class="form-group" style='margin-top:50px;'>
+    <div class="col-md-2">
+    </div>
+    <label for="fname" class="col-md-3 control-label">Full Name</label>
+    <div class="col-md-6">
+      <input type="text" style='margin-bottom:5px;' class="form-control" ng-model="empbasic.fname" id="fname" name="fname" placeholder="First Name"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-2">
+    </div>
+    <label for="mname" class="col-md-3 control-label"></label>
+    <div class="col-md-6">
+      <input type="text" style='margin-bottom:5px;' class="form-control" ng-model="empbasic.mname" id="mname" name="mname" placeholder="Middle Name"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-2">
+    </div>
+    <label for="lname" class="col-md-3 control-label"></label>
+    <div class="col-md-6">
+      <input type="text" style='margin-bottom:5px;' class="form-control" ng-model="empbasic.lname" id="lname" name="lname" placeholder="Last Name"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-2">
+    </div>
+    <label for="nname" class="col-md-3 control-label">Nick Name</label>
+    <div class="col-md-6">
+      <input type="text" style='margin-bottom:5px;' class="form-control" ng-model="empbasic.nname" id="nname" name="nname" placeholder="Nick Name"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-2">
+    </div>
+    <label for="contact" class="col-md-3 control-label">Contact Number</label>
+    <div class="col-md-6">
+      <input type="number" style='margin-bottom:5px;' class="form-control" ng-model="empbasic.contact" id="contact" name="contact" placeholder="Contact Number"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-2">
+    </div>
+    <label for="email" class="col-md-3 control-label">E-mail</label>
+	<form>
+    <div class="col-md-6">
+      <input type="mail" style='margin-bottom:5px;' name="myInput" class="form-control" ng-model="empbasic.email" id="email" name="email" ng-model="myInput" placeholder="Email Address"/>
+    </div>
+	</form>
+  </div>
+  <div class="form-group">
+    <div class="col-md-2">
+    </div>
+    <label for="homeadd" class="col-md-3 control-label">Address</label>
+    <div class="col-md-6">
+      <input type="text" style='margin-bottom:5px;' class="form-control" ng-model="empbasic.homeadd" id="homeadd" name="homeadd"  placeholder="Home Address"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-2">
+    </div>
+    <label for="dept" class="col-md-3 control-label">Department</label>
+    <div class="col-md-6">
+      <input type="text" style='margin-bottom:5px;' class="form-control" ng-model="empbasic.dept" id="dept" name="dept" placeholder="Department Name"/>
+    </div>
+  </div> 
+  <div class="form-group">
+    <div class="col-md-2">
+    </div>
+    <label for="officeloc" class="col-md-3 control-label">Address</label>
+    <div class="col-md-6">
+      <input type="text" style='margin-bottom:5px;' class="form-control" ng-model="empbasic.officeloc" id="officeloc" name="officeloc" placeholder="Office Location"/>
+    </div>
+  </div>
+  <button id="btnCancel" type="button" class="btn btn-primary" ng-click="cancel()" style="float:right; margin-top:30px; margin-right:20px;">Submit</button>
+</form>
+</div>

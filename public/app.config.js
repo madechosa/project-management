@@ -12,6 +12,9 @@ angular.
         when('/projects/basic', {
 		template: '<basic-info></basic-info>'
         }). 
+		when('/projects/qualifications', {
+		template: '<project-qualifications></project-qualifications>'
+        }).
 		when('/projects/summary', {
 		template: '<project-detail></project-detail>'
         }).
@@ -27,7 +30,7 @@ angular.
 		when('/projects/view', {
           template: '<view-proj></view-proj>'
         }).
-		when('/projects/exp', {
+		when('/projects/experience', {
           template: '<project-experience></project-experience>'
         }).
 		when('/wsor/register', {
@@ -39,7 +42,7 @@ angular.
 		when('/view', {
           template: '<document-view></document-view>'
         }).
-        otherwise('/index');
+        otherwise('/init');
 
     }
 	]);
@@ -59,7 +62,10 @@ angular.
 		if ($location.$$path=='/init') {
 			$location.path('/projects/view');
 		}
-		if ($location.$$path=='/projects/summary' || $location.$$path=='/projects/view') {
+		if ($location.$$path=='/projects/summary' || $location.$$path=='/projects/view' || 
+			$location.$$path=='/projects/basic' || $location.$$path=='/projects/areas' || 
+			$location.$$path=='/projects/seminar' || $location.$$path=='/projects/career' ||
+			$location.$$path=='/projects/experience') {
 			$rootScope.navbar = false;	
 		}
 		if ($location.$$path=='/logout'){

@@ -1,0 +1,154 @@
+ <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+				<li><a href="#!/projects/basic">Basic Information</a></li>
+				<li><a href="#!/projects/qualifications">Summary of Qualifications</a></li>
+				<li><a href="#!/projects/areas">Areas of Specialization</a></li>
+				<li><a href="#!/projects/seminar">Seminars and Training</a></li>
+				<li><a href="#!/projects/career" >Career Synopsis</a></li>	               
+			 <li class="active"><a href="#!/projects/experience" >Project Experience</a></li>	               
+          </ul>     
+        </div>
+
+<div class="col-md-12">
+
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-10" align="left">
+        <h2>Project Experience</h2>
+        <br>
+    </div>
+  </div>
+
+  <form class="form-vertical" name="experienceForm" ng-submit="submit">
+    <div class="form-group" ng-repeat="experience in experience">
+
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">
+              <label for="empid" class="control-label">Employee ID:</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" style='margin-bottom:5px;' class="form-control" ng-model="empexperience.empid" id="empid" name="empid" placeholder="Employee ID"/>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">
+              <label for="client" class="control-label">Client:</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="client" style='margin-bottom:5px;' ng-model="empexperience.client" name="client" placeholder="Client Name"/>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">
+              <label for="client" class="control-label">Project:</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="project" style='margin-bottom:5px;' ng-model="empexperience.project" name="project" placeholder="Project Name"/>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">
+              <label for="client" class="control-label">Duration:</label>
+            </div>
+            <div class="col-md-2">
+              <input type="date" class="form-control" id="duration" style='margin-bottom:5px;' ng-model="empexperience.duration" name="duration" placeholder="Duration"/>
+            </div>
+            <div class="col-md-2">
+              <input type="date" class="form-control" id="duration" style='margin-bottom:5px;'/>
+            </div>
+            <div class="col-md-3 checkbox-inline">
+              <label><input type="checkbox" class="checkbox" id="checkbox" name="checkbox">Up to Present</label>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">
+              <label for="client" class="control-label">Description:</label>
+            </div>
+            <div class="col-md-6">
+              <textarea class="form-control" rows="4" id="desc" style='margin-bottom:5px;' ng-model="empexperience.desc" name="desc" placeholder="Project Description"></textarea>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">
+              <label for="client" class="control-label">Role:</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="role" style='margin-bottom:5px;' ng-model="empexperience.role" name="role" placeholder="Role"/>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">
+              <label for="client" class="control-label">Project Responsibilities:</label>
+            </div>
+            <div class="col-md-6">
+              <textarea class="form-control" rows="4" id="projresp" style='margin-bottom:5px;' ng-model="empexperience.projresp" name="projresp" placeholder="Project Responsibilities"></textarea>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">
+              <label for="client" class="control-label">Platform:</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="platform" style='margin-bottom:5px;' ng-model="empexperience.platform" name="platform" placeholder="Platform used in project"/>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </form>	
+   
+   <div class="row">
+     <div class="col-md-2">
+     </div>
+	   <div class="btn-group col-md-10" align="left">
+       <button type="button" class="btn btn-primary" ng-click="addNewExperience()">Add another project experience</button>
+       <button type="button" class="btn btn-primary" ng-click="removeExperience()">Remove</button>	   
+	   </div>
+	   <div class="col-md-12" align="right">
+	      <div class="btn-group">
+          <button id="btnButton" type="button" class="btn btn-primary" ng-click="submit()">Submit</button>
+	        <button id="btnCancel" type="button" class="btn btn-primary" ng-click="cancel()">Cancel</button>
+        </div>
+	   </div>
+   </div>
+  
+</div>

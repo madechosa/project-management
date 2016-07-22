@@ -1,0 +1,47 @@
+ <div class="col-sm-3 col-md-2 sidebar">
+		
+          <ul class="nav nav-sidebar">
+           
+           <!-- <li ng-repeat="part in cv.parts"><a href="#">{{part.part}}</a></li>-->
+				<li><a href="#!/projects/basic">Basic Information</a></li>
+				<li class="active"><a href="#!/projects/qualifications">Summary of Qualifications</a></li>
+				<li><a href="#!/projects/areas">Areas of Specialization</a></li>
+				<li><a href="#!/projects/seminar">Seminars and Training</a></li>
+				<li><a href="#!/projects/career" >Career Synopsis</a></li>	               
+				<li><a href="#!/projects/experience" >Project Experience</a></li>	               
+          </ul>     
+		  
+        </div>
+
+<div>
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-10" align="left">
+        <h1>Summary of Qualifications</h1>
+        <br>
+    </div>
+  </div>
+
+<form>
+  <div class="form-group" ng-repeat="qualifications in qualifications">
+    <div class="row">  
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-3">
+        <label for="comment">Comment:</label>
+      </div>
+      <div class="col-md-5">
+        <input type="text" class="form-control" rows="3" id="comment" ng-required="true"></input>
+      </div>
+      <div class="col-md-1">
+          <button type="button" class="btn btn-primary" ng-click="removeQualification()">Cancel</button>
+      </div>
+      <div class="col-md-1">
+        <button type="button" class="btn btn-primary" ng-click="addNewQualification()">Add</button>
+      </div>
+    </div>
+  </div>
+    
+</form>
+</div>
