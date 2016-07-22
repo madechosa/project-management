@@ -69,7 +69,7 @@ angular.
 		if ($location.$$path=='/logout'){
 			$location.path('/init');
 			$cookies.remove('scempid');
-			$cookies.remove('scname');
+			$cookies.remove('sckey');
 		}
 	
 	}

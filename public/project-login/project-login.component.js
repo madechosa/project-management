@@ -6,15 +6,15 @@ angular.
       function projectLoginController($scope, $http, $location, $cookies) {
 		  var self = this;
 			
-			
 		  //console.log("routeParams:" + $routeParams.projectId);
 		  $http.get('/init').then(function(response) {
 			 console.log('xxxx');
 			 //console.log(response.data);
-			 //self.projects = response.data;
+			 self.projects = response.data;
+			 /*
 			 if (response.data!=null) {
 				$scope.errorMessage = 'xxx';
-			 } 
+			 } */
 		  });
 		  // $scope.clickBtnSubmit = function() {
 		  $scope.submit = function() {
@@ -26,14 +26,13 @@ angular.
 				var dataObj = response.data;
 				if(dataObj != '1') {
 					cookieFunc(dataObj);
-				}
-				/* else {
+				} else {
 					console.log('incorrect user/pass');
-					//showAlert($event);
-					$location.path('/init/login');
+					$scope.loginErr = 
+					'<div class="alert alert-danger col-md-12" role="alert"><strong>Oops!!</strong> Something wrong, please try again later.</div>';
 				}
-				*/
-				self.projects = response.data; 
+				
+				//self.projects = response.data; 
 			});
 
 		  }
@@ -49,7 +48,7 @@ angular.
 			  var favoriteCookie = $cookies.get('scempid');
 			  // Setting a cookie
 			  $cookies.put('scempid', dataObj.firstname);
-				$cookies.put('scname', dataObj.emp_id);
+			  $cookies.put('sckey', dataObj.emp_id);
 			  $location.path('/projects/summary');
 			}
 		}]
