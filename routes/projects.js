@@ -12,18 +12,24 @@ router.get('/', function(req, res, next) {
 });
 
 
-/*router.get('/:id', function(req, res, next) {
-=======
-router.get('basicInfo/:id', function(req, res, next) {
->>>>>>> aaf1fb947ded2890ca8e04b57afafa64e2b892de
-	var sql = 'SELECT id, name FROM project WHERE id = ' + req.params.id;
-
+//router.get('/:id', function(req, res, next) {
+//=======
+//select statement
+router.get('/basic', function(req, res, next) {
+//>>>>>>> aaf1fb947ded2890ca8e04b57afafa64e2b892de
 	var connection = mysql.createConnection({
 		host: '10.164.37.53',
 		database:'training',
 		user: 'training',
 		password:'training'
 	});
+	var data = {
+		empid: req.body.email
+	};
+	console.log("/basic");
+	var sql = "SELECT * FROM `basic_information` WHERE `empid`= ?'" +req.body.id+ "'";
+	console.log(req.body.id);
+	
 
 	connection.connect();
 	
@@ -43,7 +49,7 @@ router.get('basicInfo/:id', function(req, res, next) {
 	});
 	
 });
-*/
+
 
 router.post('/basic', function(req,res){
 

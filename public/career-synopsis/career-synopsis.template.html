@@ -31,7 +31,7 @@
 			<div class="form-group"  ng-class="{ 'has-error' : careerForm.careersy.empid.$invalid && !basicForm.career.empid.$pristine }">
 				<label for="empid" class="col-md-3"> Employee ID:</label>
 				<div class="col-md-6">
-					<input type="text" style='margin-bottom:5px;' class="form-control" ng-model="careersy.empid" ng-required="true" id="empid" name="empid" placeholder="Employee ID"/>
+					<input type="text" style='margin-bottom:5px;' class="form-control" ng-model="careersy.empid" ng-required="true" id="empid" name="empid" placeholder="Employee ID" style='margin-bottom:5px;'/>
 				</div>
 			</div>
 		</div>
@@ -42,7 +42,7 @@
 			<div class="form-group">
 				<label for="company" class="col-md-3">Company Name:</label>
 				<div class="col-md-6">
-					<input type="text" class="form-control" ng-model="careersy.company" id="company" name="company "ng-required="true" placeholder="Company Name">
+					<input type="text" class="form-control" ng-model="careersy.company" id="company" name="company "ng-required="true" placeholder="Company Name" style='margin-bottom:5px;'>
 				</div>
 			</div>
 		</div>
@@ -53,7 +53,7 @@
 			<div class="form-group">
 				<label for="position" class="col-md-3">Position:</label>
 				<div class="col-md-6">
-					<input type="text" class="form-control" ng-model="careersy.position" id="position" name="position" ng-required="true" placeholder="Position">
+					<input type="text" class="form-control" ng-model="careersy.position" id="position" name="position" ng-required="true" placeholder="Position" style='margin-bottom:5px;'>
 				</div> 
 			</div>
 		</div>
@@ -63,10 +63,10 @@
 			</div>
 			<div class="form-group">
 				<label for="Duration" class="col-md-3 control-label">Duration:</label>
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<input type="date" class="form-control" id="Duration" style='margin-bottom:5px;' placeholder="MM/DD/YYYY" ng-model="careersy.date" id="date" name="date" />
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<input type="date" class="form-control" id="Duration" style='margin-bottom:5px;' name="To: MM/DD/YYYY" ng-model="careersy.date" id="date" name="date"/>
 				</div>
 				<div class="checkbox-inline col-md-1">
@@ -89,8 +89,8 @@
 	<div class="row" align="right">
 		<br>
 		<div>
-			<button id="btnCancel" type="button" class="btn btn-primary"  ng-click="cancel()">Cancel</button>
 			<input type="submit" class="btn btn-primary"/>
+			<button id="btnCancel" type="button" class="btn btn-primary"  ng-click="cancel()">Cancel</button>
 		</div>
 	</div>
 
